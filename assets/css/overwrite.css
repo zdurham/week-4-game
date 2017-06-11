@@ -1,0 +1,52 @@
+body {
+	background-image: url("../images/loz-background2.jpg");
+}
+
+.header {
+	background-color: gold;
+	text-align: center;
+	font-weight: bold;
+}
+
+.crystal-img {
+	height: 200px;
+	width: 200px;
+	margin: 10px;
+	border: 5px gold solid;
+}
+
+.replay-button {
+	position: absolute;
+	padding: 20px;
+	top: 20%;
+
+}
+
+#instructions {
+	background-color: #ddd;
+	border: 2px solid black;
+	margin-top: 20px;
+}
+
+#value-container {
+	background-color: #ddd;
+	border: 2px solid black;
+	margin-top: 20px;
+}
+
+#counter-container {
+	background-color: #ddd;
+	border: 2px solid black;
+	margin-top: 20px;
+}
+
+#score-container {
+	background-color: #ddd;
+	border: 2px solid black;
+	margin-top: 20px;
+}
+
+#crystal-container {
+	text-align: center;
+}
+

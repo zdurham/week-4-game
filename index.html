@@ -27,7 +27,7 @@
 			<!-- Row 2 (value to match and wins/losses counter) -->
 			<div class="row">
 					<div class="col-md-4 col-md-offset-2" id="value-container"> <!-- this will hold the score the player wants to add up to -->
-						<h2 id="value"></h2>
+						<h2 id="target-value"></h2>
 					</div>
 
 					<div class="col-md-4" id="counter-container"> <!-- this will hold wins/losses -->
@@ -45,22 +45,15 @@
 			
 			<!-- Row 4 (player score) -->
 			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<p id="score-header">
-						Your current score is:
-					</p>
+				<div class="col-md-8 col-md-offset-2" id="score-container">
+					<p id="score-header">Your current score is:</p>
 
 					<p id="player-score"></p>
 				</div>
 			</div> <!-- Closing Row 4 -->
 		</div>
 
-
-		
-
-
-
-		<script src="jquery-3.2.1.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="assets/javascript/game.js" type="application/javascript">
 		</script>
 	</body>
