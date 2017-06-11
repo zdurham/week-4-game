@@ -1,25 +1,38 @@
 body {
 	background-image: url("../images/loz-background2.jpg");
+	font-family: 'Press Start 2P', cursive;
 }
+
 
 .header {
 	background-color: gold;
 	text-align: center;
 	font-weight: bold;
+	padding: 20px;
+	font-size: 36px;
+	margin-top: 20px;
+}
+
+.header h1 {
+	display: inline-block;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+.header img {
+	width: 100px;
+	height: 100%;
+	display: inline-block;
 }
 
 .crystal-img {
 	height: 200px;
 	width: 200px;
 	margin: 10px;
-	border: 5px gold solid;
+
 }
 
-.replay-button {
-	position: absolute;
-	padding: 20px;
-	top: 20%;
-
+.crystal-img:hover {
+	border: 5px solid gold;
 }
 
 #instructions {
@@ -28,25 +41,83 @@ body {
 	margin-top: 20px;
 }
 
+#first-p {
+	margin-top: 10px;
+}
+
 #value-container {
 	background-color: #ddd;
 	border: 2px solid black;
 	margin-top: 20px;
+	margin-bottom: 20px;
+	height: 74px;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+#value-container img {
+	height: 50px;
+	width: 50px;
+	display: inline-block;
+}
+
+#target-value {
+	font-size: 18px;
+	display: inline-block;
+
 }
 
 #counter-container {
 	background-color: #ddd;
 	border: 2px solid black;
 	margin-top: 20px;
+	padding-top: 10px;
+	height: 74px;
+}
+
+#counter-container img {
+	height: 20px;
+	width: 20px;
 }
 
 #score-container {
 	background-color: #ddd;
+	text-align: center;
 	border: 2px solid black;
 	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 #crystal-container {
 	text-align: center;
+}
+
+.game-over {
+	position: absolute;
+	top: 50%;
+	left: 0px;
+	right: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 300px;
+	width: 400px;
+	background-color: black;
+	text-align: center;
+	border: solid gold 10px;
+	padding: 20px;
+	color: white;
+}
+
+.reset-button {
+	background-color: gold;
+	color: black;
+	border: #ddd solid 2px;
+
+}
+
+.reset-button:hover {
+	background-color: #ddd;
+	color: gold;
+	border: gold 2px solid;
 }
 

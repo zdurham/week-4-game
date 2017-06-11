@@ -5,34 +5,47 @@
 		<title>Crystal Collector</title>
 		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="assets/css/overwrite.css">
 	</head>
 	<body>
 		<div class="header">
-			<h1>Crystal Collector!</h1>
+			<img src="assets/images/header_rupee.png" alt="rupee">
+			<h1>Rupee Collector</h1>
+			<img src="assets/images/header_rupee.png" alt="rupee">
 		</div>
 
 		<div class="container-fluid">
 			<!-- Row 1 (instructions) -->
 			<div class="row">
 					<div class="col-md-8 col-md-offset-2" id="instructions"> <!-- Game instructions -->
-						<p>Bacon ipsum dolor amet shank landjaeger short loin pork loin cow porchetta ribeye hamburger pork flank. Cupim jowl picanha ground round, beef ribs ribeye doner capicola. Shankle tail t-bone meatloaf pork chop. Kevin fatback picanha short loin strip steak biltong shoulder doner bacon t-bone tenderloin ham hock.
+						<p id="first-p">Back from a long adventure, you are now looking to buy some unopened treasure chests from a local village. However, they only take exact change!</p>
 
-						Bacon venison pig shoulder flank pastrami capicola andouille kevin hamburger rump cow salami beef. Alcatra bacon salami, ham brisket pastrami biltong. Hamburger swine picanha, ham shankle biltong cupim ham hock pig jowl burgdoggen corned beef turducken. Ribeye leberkas meatball, pork cow drumstick picanha spare ribs. Brisket jowl corned beef capicola bacon hamburger pig venison spare ribs. Venison frankfurter cow beef capicola filet mignon kevin. Tenderloin ribeye t-bone pig, chuck capicola burgdoggen turkey bresaola biltong frankfurter bacon spare ribs pork belly.
+						<p>Unfortunately, these shopkeepers also value rupees differently, so you don't know how much they will be valued until you hand them over.</p>
 
-						Pastrami corned beef short ribs flank t-bone, pancetta kevin spare ribs short loin venison. Doner salami swine pork belly chicken filet mignon pig flank andouille beef ribs burgdoggen. Capicola beef boudin, pork beef ribs kevin tail jerky turkey picanha pork chop ball tip. Pork chop spare ribs corned beef leberkas flank, short loin beef venison brisket strip steak pastrami jowl. Alcatra pork belly leberkas hamburger, picanha shank burgdoggen filet mignon beef ribs boudin pancetta pastrami.</p>
+						<p>The desired amount will be displayed below. Press one of the rupees to build up your score. The goal is to reach the desired amount exactly. If you go over you will have an ornery shopkeeper on your hands!</p>
+
+						<p>Be careful! After each successful (or failed) transaction, the values of the rupees will randomly change!</p>
 					</div>
 			</div> <!-- Closing Row 1 -->
 			
 			<!-- Row 2 (value to match and wins/losses counter) -->
 			<div class="row">
-					<div class="col-md-4 col-md-offset-2" id="value-container"> <!-- this will hold the score the player wants to add up to -->
-						<h2 id="target-value"></h2>
+					<div class="col-md-3 col-md-offset-2" id="value-container"> <!-- this will hold the score the player wants to add up to -->
+						<img src="assets/images/header_rupee.png" alt="rupee">
+						<p id="target-value"></p>
 					</div>
 
-					<div class="col-md-4" id="counter-container"> <!-- this will hold wins/losses -->
-						<p id="wins">Wins: </p>
-						<p id="losses">Losses: </p>
+					<div class="col-md-4 col-md-offset-1" id="counter-container"> <!-- this will hold wins/losses -->
+						
+						<p> 
+							Chests Acquired: 
+							<img src="assets/images/chest.jpg" alt="chest"> x <span id="wins"></span>
+						</p>
+						<p>
+							Angry Shopkeepers: 
+							<img src="assets/images/shopkeeper.gif" alt="shopkeeper"> x <span id="losses"></span>
+						</p>
 					</div>
 			</div> <!-- Closing Row 2 -->
 			
@@ -47,7 +60,6 @@
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2" id="score-container">
 					<p id="score-header">Your current score is:</p>
-
 					<p id="player-score"></p>
 				</div>
 			</div> <!-- Closing Row 4 -->
