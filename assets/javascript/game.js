@@ -17,12 +17,17 @@ function crystalNumber(min, max) {
 function targetNumber(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+var goodScreen
+var badScreen
+var resetButton;
+
 // Declare Crystal Values
 var crysVal0 = crystalNumber(1, 12)
 var crysVal1 = crystalNumber(1, 12)
 var crysVal2 = crystalNumber(1, 12)
 var crysVal3 = crystalNumber(1, 12)
 
+// Declare Target
 var target = targetNumber(19, 120)
 
 
@@ -55,8 +60,52 @@ $(document).ready(setup());
 
 
 
+
+
+//---------- GameOver Screen/Reset Button ----------//
+// If player wins this will appear
+function gameOverGood() {
+	goodScreen = $("<div>")
+	goodScreen.appendTo($(".container-fluid"))
+	goodScreen.addClass("game-over")
+	goodScreen.attr("id", "good")
+	goodScreen.html("<h2>GAME OVER</h2>" + "<p>Huzzah! You successfully bought the chest!</p>");
+	
+	// Reset Button
+	resetButton = $("<button>");
+	resetButton.attr("type", "button")
+	resetButton.addClass("reset-button");
+	resetButton.appendTo($(".game-over"));
+	resetButton.html("Press here to play again!")
+
+	resetButton.on("click", function() {
+		reset();
+	});
+
+}
+
+// If player loses this will appear
+function gameOverBad() {
+	badScreen= $("<div>");
+	badScreen.appendTo($(".container-fluid"));
+	badScreen.addClass("game-over");
+	badScreen.attr("id", "bad");
+	badScreen.html("<h2>GAME OVER</h2>" + "<p>Uh-oh! It looks like you angered the shop keeper! Better get out of here fast!</p>");
+	
+	// Reset Button
+	resetButton = $("<button>");
+	resetButton.addClass("reset-button");
+	resetButton.appendTo($(".game-over"));
+	resetButton.html("Press here to play again!")
+
+	resetButton.on("click", function() {
+		reset();
+	});
+}
+
 //---------- Reset Function ----------//
 function reset() {
+	target = targetNumber(19, 120)
 	targetValue.innerHTML = "Required: " + target;
 	playerScore = 0;
 	scoreHolder.innerHTML = playerScore
@@ -71,47 +120,11 @@ function reset() {
 	$("#c2").attr("data-crysvalue", crysVal2)
 	$("#c3").attr("data-crysvalue", crysVal3)
 
-	gameOverScreen.remove();
-	resetButton.remove();
-}
-
-//---------- GameOver Screen/Reset Button ----------//
-// If player wins this will appear
-function gameOverGood() {
-	var gameOverScreen = $("<div>")
-	gameOverScreen.appendTo($(".container-fluid"))
-	gameOverScreen.addClass("game-over")
-	gameOverScreen.attr("id", "good")
-	gameOverScreen.attr("id", "bad");
-	gameOverScreen.html("<p>Uh-oh! It looks like you angered the shop keeper! Better get out of here fast!</p>");
-	
-	// Reset Button
-	var resetButton = $("<button>");
-	resetButton.attr("type", "button")
-	resetButton.addClass("reset-button");
-	resetButton.appendTo($(".game-over"));
-	resetButton.html("Press here to play again!")
+	$("#good").remove();
+	$("#bad").remove();
 
 }
 
-// If player loses this will appear
-function gameOverBad() {
-	var gameOverScreen = $("<div>");
-	gameOverScreen.appendTo($(".container-fluid"));
-	gameOverScreen.addClass("game-over");
-	gameOverScreen.attr("id", "bad");
-	gameOverScreen.html("<h2>GAME OVER</h2>" + "<p>Uh-oh! It looks like you angered the shop keeper! Better get out of here fast!</p>");
-	
-	// Reset Button
-	var resetButton = $("<button>");
-	resetButton.addClass("reset-button");
-	resetButton.appendTo($(".game-over"));
-	resetButton.html("Press here to play again!")
-}
-
-$("<button>").on("click", function() {
-	reset();
-});
 
 //---------- Crystal click function ----------//
 $(".crystal-img").on("click", function() {
@@ -137,8 +150,6 @@ $(".crystal-img").on("click", function() {
 			wins += 1;
 			gameOverGood();
 			$("#wins").html(wins)
-			alert("You won!")
-
 		}
 
 		else if (playerScore > target) {
@@ -147,7 +158,6 @@ $(".crystal-img").on("click", function() {
 			losses += 1;
 			gameOverBad();
 			$("#losses").html(losses);
-		
 		}
 	}
 
